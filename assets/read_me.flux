@@ -1,0 +1,95 @@
+##So like evrything is normal...to like nothing...#else
+    #define JSON_HEDLEY_TI_ARMCL_VERSION_CHECK(major,minor,patch) (0)
+#endif
+
+#if defined(JSON_HEDLEY_TI_CL6X_VERSION)
+    #undef JSON_HEDLEY_TI_CL6X_VERSION
+#endif
+#if defined(__TI_COMPILER_VERSION__) && defined(__TMS320C6X__)
+    #define JSON_HEDLEY_TI_CL6X_VERSION JSON_HEDLEY_VERSION_ENCODE(__TI_COMPILER_VERSION__ / 1000000, (__TI_COMPILER_VERSION__ % 1000000) / 1000, (__TI_COMPILER_VERSION__ % 1000))
+#endif
+
+#if defined(JSON_HEDLEY_TI_CL6X_VERSION_CHECK)
+    #undef JSON_HEDLEY_TI_CL6X_VERSION_CHECK
+#endif
+#if defined(JSON_HEDLEY_TI_CL6X_VERSION)
+    #define JSON_HEDLEY_TI_CL6X_VERSION_CHECK(major,minor,patch) (JSON_HEDLEY_TI_CL6X_VERSION >= JSON_HEDLEY_VERSION_ENCODE(major, minor, patch))
+#else
+    #define JSON_HEDLEY_TI_CL6X_VERSION_CHECK(major,minor,patch) (0)
+#endif
+
+#if defined(JSON_HEDLEY_TI_CL7X_VERSION)
+    #undef JSON_HEDLEY_TI_CL7X_VERSION
+#endif
+#if defined(__TI_COMPILER_VERSION__) && defined(__C7000__)
+    #define JSON_HEDLEY_TI_CL7X_VERSION JSON_HEDLEY_VERSION_ENCODE(__TI_COMPILER_VERSION__ / 1000000, (__TI_COMPILER_VERSION__ % 1000000) / 1000, (__TI_COMPILER_VERSION__ % 1000))
+#endif
+
+#if defined(JSON_HEDLEY_TI_CL7X_VERSION_CHECK)
+    #undef JSON_HEDLEY_TI_CL7X_VERSION_CHECK
+#endif
+#if defined(JSON_HEDLEY_TI_CL7X_VERSION)
+    #define JSON_HEDLEY_TI_CL7X_VERSION_CHECK(major,minor,patch) (JSON_HEDLEY_TI_CL7X_VERSION >= JSON_HEDLEY_VERSION_ENCODE(major, minor, patch))
+#else
+    #define JSON_HEDLEY_TI_CL7X_VERSION_CHECK(major,minor,patch) (0)
+#endif
+
+#if defined(JSON_HEDLEY_TI_CLPRU_VERSION)
+    #undef JSON_HEDLEY_TI_CLPRU_VERSION
+#endif
+#if defined(__TI_COMPILER_VERSION__) && defined(__PRU__)
+    #define JSON_HEDLEY_TI_CLPRU_VERSION JSON_HEDLEY_VERSION_ENCODE(__TI_COMPILER_VERSION__ / 1000000, (__TI_COMPILER_VERSION__ % 1000000) / 1000, (__TI_COMPILER_VERSION__ % 1000))
+#endif
+
+#if defined(JSON_HEDLEY_TI_CLPRU_VERSION_CHECK)
+    #undef JSON_HEDLEY_TI_CLPRU_VERSION_CHECK
+#endif
+#if defined(JSON_HEDLEY_TI_CLPRU_VERSION)
+    #define JSON_HEDLEY_TI_CLPRU_VERSION_CHECK(major,minor,patch) (JSON_HEDLEY_TI_CLPRU_VERSION >= JSON_HEDLEY_VERSION_ENCODE(major, minor, patch))
+#else
+    #define JSON_HEDLEY_TI_CLPRU_VERSION_CHECK(major,minor,patch) (0)
+#endif
+
+#if defined(JSON_HEDLEY_CRAY_VERSION)
+    #undef JSON_HEDLEY_CRAY_VERSION
+#endif
+#if defined(_CRAYC)
+    #if defined(_RELEASE_PATCHLEVEL)
+        #define JSON_HEDLEY_CRAY_VERSION JSON_HEDLEY_VERSION_ENCODE(_RELEASE_MAJOR, _RELEASE_MINOR, _RELEASE_PATCHLEVEL)
+    #else
+        #define JSON_HEDLEY_CRAY_VERSION JSON_HEDLEY_VERSION_ENCODE(_RELEASE_MAJOR, _RELEASE_MINOR, 0)
+    #endif
+#endif
+
+#if defined(JSON_HEDLEY_CRAY_VERSION_CHECK)
+    #undef JSON_HEDLEY_CRAY_VERSION_CHECK
+#endif
+#if defined(JSON_HEDLEY_CRAY_VERSION)
+    #define JSON_HEDLEY_CRAY_VERSION_CHECK(major,minor,patch) (JSON_HEDLEY_CRAY_VERSION >= JSON_HEDLEY_VERSION_ENCODE(major, minor, patch))
+#else
+    #define JSON_HEDLEY_CRAY_VERSION_CHECK(major,minor,patch) (0)
+#endif
+
+#if defined(JSON_HEDLEY_IAR_VERSION)
+    #undef JSON_HEDLEY_IAR_VERSION
+#endif
+#if defined(__IAR_SYSTEMS_ICC__)
+    #if __VER__ > 1000
+        #define JSON_HEDLEY_IAR_VERSION JSON_HEDLEY_VERSION_ENCODE((__VER__ / 1000000), ((__VER__ / 1000) % 1000), (__VER__ % 1000))
+    #else
+        #define JSON_HEDLEY_IAR_VERSION JSON_HEDLEY_VERSION_ENCODE(__VER__ / 100, __VER__ % 100, 0)
+    #endif
+#endif
+
+#if defined(JSON_HEDLEY_IAR_VERSION_CHECK)
+    #undef JSON_HEDLEY_IAR_VERSION_CHECK
+#endif
+#if defined(JSON_HEDLEY_IAR_VERSION)
+    #define JSON_HEDLEY_IAR_VERSION_CHECK(major,minor,patch) (JSON_HEDLEY_IAR_VERSION >= JSON_HEDLEY_VERSION_ENCODE(major, minor, patch))
+#else
+    #define JSON_HEDLEY_IAR_VERSION_CHECK(major,minor,patch) (0)
+#endif
+
+#if defined(JSON_HEDLEY_TINYC_VERSION)
+    #undef JSON_HEDLEY_TINYC_VERSION
+#endif
